@@ -1,19 +1,27 @@
 public class ArrayMethods {
     public static int rowSum(int[][] ary, int x) {
+	if (x > ary.length-1) {return 0;}
 	int sum = 0;
 	for (int i = 0; i < ary[x].length; i++) {
 	    sum += ary[x][i];
 	}
+	return sum;
     }
     public static int columnSum(int[][] ary, int y) {
-	int sum = 0;
-	for (int i = 0; i < ary.length; i++) {
-	    for (int j = 0; i < ary[j].length; j++) {
-		if (j == y) {
-		    sum += ary[i][j];
-		}
+	int l = 0;
+	for (int x = 0; x < ary.length; x++) {
+	    if (ary[x].length > l) {
+		l = ary[x].length;
 	    }
 	}
+	if (y > l-1) {return 0;}
+	int sum = 0;
+	for (int i = 0; i < ary.length; i++) {
+	    if (!(ary[i].length-1 < y)) {
+		sum += ary[i][y];
+	    }
+	} 
+	return sum;
     }
     public static int[] allRowSums(int[][] ary) {
 	int[] sum = new int[ary.length];
@@ -24,7 +32,7 @@ public class ArrayMethods {
     }
     public static int[] allColSums(int[][] ary) {
         int l = 0;
-	for (int x = 0; i < ary.length; i++) {
+	for (int x = 0; x < ary.length; x++) {
 	    if (ary[x].length > l) {
 		l = ary[x].length;
 	    }

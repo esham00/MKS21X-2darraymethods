@@ -35,4 +35,30 @@ public class ArrayMethods {
 	}
 	return sum;
     }
+    public static boolean isRowMagic(int[][]ary) {
+	int[]arrayOfSums = allRowSums(ary);
+	int sum = 0;
+	for (int i = 0; i < arrayOfSums.length; i++) {
+	    sum += arrayOfSums[i];
+	}
+	if (sum == 0) {
+	    return true;
+	}
+	else {
+	    return false;
+	}
+    }
+    public static boolean isColumnMagic(int[][] ary) {
+	int[] arrayOfSums = allColSums(ary);
+	int sum = 0;
+	for (int i = 0; i < arrayOfSums.length; i++) {
+	    sum += arrayOfSums[i];
+	}
+	if (sum == 0) {
+	    return true;
+	}
+	else {
+	    return false;
+	}
+    }
 }

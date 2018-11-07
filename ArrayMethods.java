@@ -41,6 +41,9 @@ public class ArrayMethods {
 	for (int i = 0; i < l; i++) {
 	    sum[i] = columnSum(ary, i);
 	}
+	if (l == 0) {
+	    sum = new int[]{0};
+	}
 	return sum;
     }
     public static boolean isRowMagic(int[][]ary) {
@@ -49,7 +52,7 @@ public class ArrayMethods {
 	for (int i = 0; i < arrayOfSums.length; i++) {
 	    sum += arrayOfSums[i];
 	}
-	if (sum == 0) {
+	if (sum - (arrayOfSums[0] * arrayOfSums.length) == 0) {
 	    return true;
 	}
 	else {
@@ -62,7 +65,7 @@ public class ArrayMethods {
 	for (int i = 0; i < arrayOfSums.length; i++) {
 	    sum += arrayOfSums[i];
 	}
-	if (sum == 0) {
+	if (sum - (arrayOfSums[0] * arrayOfSums.length)  == 0) {
 	    return true;
 	}
 	else {
